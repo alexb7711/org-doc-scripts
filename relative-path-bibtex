@@ -1,0 +1,29 @@
+#!/bin/sh
+
+#===============================================================================
+# DESCRIPTION
+#
+# This script changes the absolute path of bibliography to a relative path
+#===============================================================================
+
+# File
+f="$1"
+
+# Get the paths
+bib=""
+bib=$(awk '/bibliography{/{print}' $f)
+bib=$(echo $bib | awk -F '[{}]' '{print $2}')
+bib=$(echo $bib | awk -F ',' '{for( i=1; i<=NF; i++ ) print $i}')
+
+# Create the local path variant
+nbib=""
+for s in $bib
+do
+    nbib="citation-database/$(basename $s),${nbib}"
+done
+
+# Remove last comma from $nbib
+nbib=${nbib%?}
+
+# Replace the paths
+sed -i "s|bibliography{.*|bibliography{ $nbib }|" $f

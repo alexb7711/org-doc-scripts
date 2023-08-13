@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#===============================================================================
+# DESCRIPTION
+#
+# This script checks for some basic applications that are required to build LaTeX packages.
+#===============================================================================
+
+echo "Checking the programs required for the build are installed..."
+
+latexmk --version >/dev/null 2>&1 && (echo "latexmk installed!") || (echo "ERROR: latexmk is required."; exit 1)
+pdflatex --version >/dev/null 2>&1 && (echo "pdflatex installed!") || (echo "ERROR: pdflatex is required."; exit 1)

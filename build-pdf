@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#===============================================================================
+# DESCRIPTION
+#
+# This script builds a LaTeX file using `latexmk'.
+#===============================================================================
+
+latexmk -f -interaction=nonstopmode \
+           -pdf -pdflatex="pdflatex --shell-escape %O %S" \
+           -bibtex {{.DOC_SRC}}
