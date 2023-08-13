@@ -6,6 +6,10 @@
 # This script builds a LaTeX file using `latexmk'.
 #===============================================================================
 
+# Build the document
 latexmk -f -interaction=nonstopmode \
            -pdf -pdflatex="pdflatex --shell-escape %O %S" \
-           -bibtex {{.DOC_SRC}}
+           -bibtex ${1}.tex
+
+# Rename the document to TARGET
+mv ${1}.tex ${2}
