@@ -12,4 +12,4 @@ latexmk -f -interaction=nonstopmode \
            -bibtex ${1}.tex
 
 # Rename the document to TARGET
-mv ${1}.tex ${2}
+mv ${1}.pdf ${2}
