@@ -117,7 +117,6 @@
                '("article"
                  "\\documentclass[11pt,a4paper,final]{article}
 \\usepackage[a4paper, total={7in, 10in}]{geometry}
-\\usepackage{algorithm2e}
 \\usepackage{booktabs}
 \\usepackage{subcaption}
 \\usepackage{graphicx}
