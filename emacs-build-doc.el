@@ -101,6 +101,15 @@
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+(unless (cl-find "thesis-appendix" org-latex-classes :key 'car
+          :test 'equal)
+  (add-to-list 'org-latex-classes
+           '("thesis-appendix"
+             "\\documentclass[ee,thesis]{usuthesis}"
+              ("\\appendix{%s}" . "\\appendix*{%s}")
+              ("\\appendixsection{%s}" . "\\appendixsection*{%s}")
+              ("\\appendixsubsection{%s}" . "\\appendixsubsection*{%s}"))))
+
   (add-to-list
    'org-latex-classes
    '("usudissertation"
