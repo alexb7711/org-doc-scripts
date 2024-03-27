@@ -33,6 +33,8 @@
 ;;------------------------------------------------------------------------------
 ;; Configuration
 (setq
+ org-latex-hyperref-template ""
+ org-latex-default-packages-alist '()
  org-cite-global-bibliography `(,(concat (getenv "HOME") "/Documents/citation-database/lit-ref.bib")
                                 ,(concat (getenv "HOME") "/Documents/citation-database/lib-ref.bib"))
  org-startup-with-inline-images t                                               ; Display images by default
@@ -73,6 +75,15 @@
   (add-to-list 'org-latex-classes
                '("FrontiersinHarvard"
                  "\\documentclass[utf8]{FrontiersinHarvard}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (add-to-list 'org-latex-classes
+               '("mdpi"
+                 "\\documentclass[energies,article,submit,moreauthors]{Definitions/mdpi}"
                  ("\\section{%s}" . "\\section*{%s}")
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
