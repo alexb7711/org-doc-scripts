@@ -36,7 +36,8 @@
  org-latex-hyperref-template ""
  org-latex-default-packages-alist '()
  org-cite-global-bibliography `(,(concat (getenv "HOME") "/Documents/citation-database/lit-ref.bib")
-                                ,(concat (getenv "HOME") "/Documents/citation-database/lib-ref.bib"))
+                                ,(concat (getenv "HOME") "/Documents/citation-database/lib-ref.bib")
+                                ,(concat (getenv "HOME") "/Documents/citation-database/misc.bib"))
  org-startup-with-inline-images t                                               ; Display images by default
  org-display-remote-inline-images 'download                                     ; Download web images
  org-export-with-smart-quotes t                                                 ; Put the correct quotes
@@ -61,6 +62,8 @@
    (octave     . t)
    (plantuml   . t)
    ))
+
+(message "The citation database directory is  %s" org-cite-global-bibliography)
 
 ;; Create new `article' class for `org-latex-classes'
 (with-eval-after-load 'org
