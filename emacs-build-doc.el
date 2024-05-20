@@ -86,7 +86,7 @@
 
   (add-to-list 'org-latex-classes
                '("mdpi"
-                 "\\documentclass[energies,article,submit,moreauthors]{Definitions/mdpi}"
+                 "\\documentclass[futuretransp,article,submit,moreauthors]{Definitions/mdpi}"
                  ("\\section{%s}" . "\\section*{%s}")
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
