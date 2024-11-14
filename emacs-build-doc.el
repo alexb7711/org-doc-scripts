@@ -107,7 +107,7 @@
 (add-to-list
    'org-latex-classes
    '("usuthesis"
-     "\\documentclass[ee,msthesis]{usuthesis}"
+     "\\documentclass[ee,thesis]{usuthesis}"
      ("\\chapter{%s}" . "\\chapter*{%s}")
      ("\\section{%s}" . "\\section*{%s}")
      ("\\subsection{%s}" . "\\subsection*{%s}")
@@ -115,14 +115,14 @@
      ("\\paragraph{%s}" . "\\paragraph*{%s}")
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-;; (unless (cl-find "thesis-appendix" org-latex-classes :key 'car
-;;           :test 'equal)
-;;   (add-to-list 'org-latex-classes
-;;            '("thesis-appendix"
-;;              "\\documentclass[ee,thesis]{usuthesis}"
-;;               ("\\appendix{%s}" . "\\appendix*{%s}")
-;;               ("\\appendixsection{%s}" . "\\appendixsection*{%s}")
-;;               ("\\appendixsubsection{%s}" . "\\appendixsubsection*{%s}"))))
+(unless (cl-find "thesis-appendix" org-latex-classes :key 'car
+          :test 'equal)
+  (add-to-list 'org-latex-classes
+           '("thesis-appendix"
+             "\\documentclass[ee,thesis]{usuthesis}"
+              ("\\appendix{%s}" . "\\appendix*{%s}")
+              ("\\appendixsection{%s}" . "\\appendixsection*{%s}")
+              ("\\appendixsubsection{%s}" . "\\appendixsubsection*{%s}"))))
 
   (add-to-list
    'org-latex-classes
